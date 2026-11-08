@@ -1,0 +1,13 @@
+<% content_for :title, "Editing bar" %>
+
+<div class="bg-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5 my-4">
+    <%= render @bar %>
+    <%= button_to "Delete", @bar, method: :delete, :class => 'bg-red-500 rounded-lg p-2 shadow-xl' %>
+</div>
+<%= render "form", bar: @bar %>
+
+<br>
+
+<div>
+  <%= link_to "Back", bars_path, class: "bg-gray-500 rounded-lg p-2 shadow-xl" %>
+</div>

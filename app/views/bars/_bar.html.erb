@@ -1,0 +1,11 @@
+<div id="<%= dom_id bar %>">
+  <div>
+    <strong><%= bar.name %></strong>
+    <br>
+    <div class="bg-gray-100 rounded-lg">
+        <% percent = bar.progress * 100 / bar.goal %>
+        <div class="bg-green-500 rounded-lg" style="height:32px; width:<%= percent %>%"></div>
+    </div>
+    <p><%= bar.progress %>/<%= bar.goal %></p>
+  </div>
+</div>

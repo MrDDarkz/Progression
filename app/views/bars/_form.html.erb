@@ -1,0 +1,27 @@
+<%= form_with(model: bar) do |form| %>
+  <% if bar.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(bar.errors.count, "error") %> prohibited this bar from being saved:</h2>
+
+      <ul>
+        <% bar.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+          <% end %>
+      </ul>
+    </div>
+    <% end %>
+  <div class="bg-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
+    <div>
+      <strong><%= form.label :name, class: "flex pe-4" %></strong>
+      <%= form.text_field :name, class: "bg-gray-100 rounded-lg ring ring-gray-900/5 px-2 w-full" %>
+      <strong><%= form.label :progress, class: "flex pe-4" %></strong>
+      <%= form.number_field :progress, class: "bg-gray-100 rounded-lg ring ring-gray-900/5 px-2 w-full" %>
+      <strong><%= form.label :goal, class: "flex pe-4" %></strong>
+      <%= form.number_field :goal, class: "bg-gray-100 rounded-lg ring ring-gray-900/5 px-2 w-full" %>
+    </div>
+    <br>
+    <div>
+      <%= form.submit class: "bg-amber-500 rounded-lg p-2 shadow-xl" %>
+    </div>
+  </div>
+  <% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="bg-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
+  <%= render @bar %>
+  <br>
+  <%= link_to "Edit", edit_bar_path(@bar), :class => 'bg-amber-500 rounded-lg p-2 shadow-xl' %>
+  <%#= button_to "Destroy this bar", @bar, method: :delete, :class => 'bg-red-500 rounded-lg p-2 shadow-xl' %>
+</div>
+<br>
+<%= link_to "Back", bars_path, :class => 'bg-gray-500 rounded-lg p-2 shadow-xl' %>

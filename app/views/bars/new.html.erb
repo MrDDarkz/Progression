@@ -1,0 +1,9 @@
+<% content_for :title, "New bar" %>
+
+<%= render "form", bar: @bar %>
+
+<br>
+
+<div>
+  <%= link_to "Back", bars_path, class: "bg-gray-500 rounded-lg p-2 shadow-xl" %>
+</div>
