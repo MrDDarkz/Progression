@@ -8,14 +8,14 @@
   <% @bars.each do |bar| %>
     <div class="bg-white rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5 m-4">
       <%= render bar %>
-      <br>
-      <%#= form_with(model: bar) do |form| %>
-        <%#= form.number_field :add, class: "bg-gray-100 rounded-lg ring ring-gray-900/5 px-2" %>
-        <%#= form.submit class: "bg-amber-500 rounded-lg p-2 shadow-xl" %>
-      <%# end %>
-      <%= link_to "Edit", edit_bar_path(bar), class: 'bg-amber-500 rounded-lg p-2 shadow-xl' %>
+      <% if authenticated? %>
+        <br>
+        <%= link_to "Edit", edit_bar_path(bar), class: 'bg-amber-500 rounded-lg p-2 shadow-xl' %>
+      <% end %>
     </div>
   <% end %>
 </div>
 
-<%= link_to "New bar", new_bar_path, class: 'bg-green-500 rounded-lg p-2 shadow-xl m-4' %>
+<% if authenticated? %>
+  <%= link_to "New bar", new_bar_path, class: 'bg-green-500 rounded-lg p-2 shadow-xl m-4' %>
+<% end %>

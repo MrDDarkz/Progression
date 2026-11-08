@@ -24,6 +24,9 @@
   </head>
 
   <body class="bg-gray-50">
+    <div class="flex justify-end">
+      <%= link_to "Log out", session_path, method: :delete, class: 'bg-red-500 rounded-lg p-2 shadow-xl m-4' %>
+    </div>
     <main class="container mx-auto mt-28 px-5">
       <%= yield %>
     </main>

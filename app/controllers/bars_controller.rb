@@ -1,5 +1,6 @@
 class BarsController < ApplicationController
   before_action :set_bar, only: %i[ show edit update destroy ]
+  allow_unauthenticated_access only: %i[ index ]
 
   # GET /bars or /bars.json
   def index
